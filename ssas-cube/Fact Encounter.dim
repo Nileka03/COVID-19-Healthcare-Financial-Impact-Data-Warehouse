@@ -1,0 +1,244 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c07f575c-772e-4a89-8f20-015e53c9cfd9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Fact Encounter</ID>
+  <Name>Fact Encounter</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="98d360ba-be01-49b2-ac67-44c7d5265756">
+    <DataSourceViewID>Healthcare_DSV</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="bfe1936d-b9c8-4fad-8e26-29dbb85aafd9">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c8b028ab-b552-4daa-8005-e7994eae1568">
+      <ID>Encounter SK</ID>
+      <Name>Encounter SK</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58cd16bc-962e-43b8-89d4-e415fc84a05c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ace4e388-5009-4541-9a96-ede1d35b339b">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>EncounterSK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b0c07a97-8351-4dbb-9516-570c0bd77345">
+          <AttributeID>Medication Key</AttributeID>
+          <Name>Medication Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="29838b9a-55d4-468a-b40c-9079d8c61082">
+          <AttributeID>Date Key</AttributeID>
+          <Name>Date Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="aafa52f0-881e-4da3-993d-f9061d18ec3c">
+          <AttributeID>Patient Key</AttributeID>
+          <Name>Patient Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="816e7a93-338e-4e51-9991-2a7cf11a8624">
+          <AttributeID>Procedure Key</AttributeID>
+          <Name>Procedure Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6511fb78-e88c-4ae9-a090-8d1e1b57ed2f">
+          <AttributeID>Condition Key</AttributeID>
+          <Name>Condition Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fddb7a77-5aa5-43b9-b160-122a09e81347">
+          <AttributeID>Provider Key</AttributeID>
+          <Name>Provider Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="615752c8-2afc-40c3-bd59-4afe773c9208">
+          <AttributeID>Payer Key</AttributeID>
+          <Name>Payer Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="15c75bf2-a45f-4e76-9f86-cd1dab725f16">
+          <AttributeID>Org Key</AttributeID>
+          <Name>Org Key</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b7126c32-c177-4a8a-a960-a8b17c67b97a">
+      <ID>Medication Key</ID>
+      <Name>Medication Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="84e309db-fb2f-44e8-b638-4d41356c9f10">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="80acadd6-cfb4-4c34-940d-792ca8d3ef25">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>MedicationKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f42f2658-2930-4acd-a425-64db7b04138c">
+      <ID>Date Key</ID>
+      <Name>Date Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a3a43275-9f02-4c79-a34b-7719a3480ddf">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a25924e1-32ed-4508-a807-040cc7dea980">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>DateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ee45134-17b2-4934-aeef-08caa8ba292e">
+      <ID>Patient Key</ID>
+      <Name>Patient Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c6864391-e280-4520-9a68-e499f37d8ce4">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="786aaa79-c2a4-4542-947d-d98a2e2dcec1">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>PatientKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ff145195-7212-421a-9fed-041a4a12c954">
+      <ID>Procedure Key</ID>
+      <Name>Procedure Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0352c42-e635-4c9f-a3bd-b3eae1603714">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d3bf0915-e8d3-4bf0-997e-7322d95585cd">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>ProcedureKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="94a7fd14-74b5-4c28-9fef-6619863c3027">
+      <ID>Condition Key</ID>
+      <Name>Condition Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="afc38b7f-bdb9-416f-b377-a7b898c17bee">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1b72af80-606b-4cd2-80f5-b1f985811bec">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>ConditionKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="005cfe56-55a9-435b-8910-6cb27eb1a976">
+      <ID>Provider Key</ID>
+      <Name>Provider Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7a2ab8a6-f9f1-4f36-af6c-0bc78ede6dc9">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9c56dab3-1e9c-407c-9ad5-545957fd0c9d">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>ProviderKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26e2334d-82f8-4076-955c-925c343e4a63">
+      <ID>Payer Key</ID>
+      <Name>Payer Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b5522f8-576c-4787-b03d-d2240de52cc2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1924e00a-6e9b-4011-b213-34514f3d2079">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>PayerKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="922d7f12-b5fe-4f28-86d2-982ef6e03fbf">
+      <ID>Org Key</ID>
+      <Name>Org Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37aa432d-770e-49ac-b225-84d79313bad8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b7a0bd6b-089e-4e44-9d9e-755f1a2e6dee">
+            <TableID>dbo_FactEncounter</TableID>
+            <ColumnID>OrgKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
